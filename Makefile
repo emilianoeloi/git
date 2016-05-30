@@ -1,6 +1,6 @@
-.PHONY: java c cpp cs clear
+.PHONY: java c cpp cs py clear
 
-all: java c cpp cs clear
+all: java c cpp cs py clear
 
 java:
 	@javac HelloWorldApp.java
@@ -18,7 +18,11 @@ cs:
 	@mcs -out:HelloWorld3App HelloWorldApp.cs
 	@mono HelloWorld3App
 
+py:
+	@python HelloWorldApp.py
+
 clear:
 	@rm helloWorldApp
 	@rm helloWorld2App
+	@rm helloWorld3App
 	@rm HelloWorldApp.class
