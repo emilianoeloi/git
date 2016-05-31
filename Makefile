@@ -1,6 +1,6 @@
-.PHONY: java c cpp cs py php vb js clear
+.PHONY: java c cpp cs py php vb js asm clear
 
-all: java c cpp cs py php vb js clear
+all: java c cpp cs py php vb js asm clear
 
 setup:
 	brew install coreutils
@@ -33,6 +33,11 @@ vb:
 
 js:
 	@./compiler.sh "JS" "Run" "node HelloWorldApp.js"
+
+asm:
+	@./compiler.sh "ASM" "Assembly" "nasm -f macho HelloWorldApp.asm"
+	@./compiler.sh "ASM" "Link" "ld -o HelloWolrd5App -e helloworldapp HelloWorldApp.o"
+	@./compiler.sh "ASM" "Run" "./HelloWolrd5App"
 
 clear:
 	@rm helloWorldApp
