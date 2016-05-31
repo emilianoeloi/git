@@ -1,6 +1,6 @@
-.PHONY: java c cpp cs py php vb clear
+.PHONY: java c cpp cs py php vb js clear
 
-all: java c cpp cs py php vb clear
+all: java c cpp cs py php vb js clear
 
 setup:
 	brew install coreutils
@@ -30,6 +30,9 @@ php:
 vb:
 	@./compiler.sh "VB.NET" "Compile" "vbnc -out:HelloWorld4App HelloWorldApp.vb"
 	@./compiler.sh "VB.NET" "Run" "mono HelloWorld4App"
+
+js:
+	@./compiler.sh "JS" "Run" "node HelloWorldApp.js"
 
 clear:
 	@rm helloWorldApp
