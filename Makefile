@@ -36,12 +36,14 @@ js:
 
 asm:
 	@./compiler.sh "ASM" "Assembly" "nasm -f macho HelloWorldApp.asm"
-	@./compiler.sh "ASM" "Link" "ld -o HelloWolrd5App -e helloworldapp HelloWorldApp.o"
-	@./compiler.sh "ASM" "Run" "./HelloWolrd5App"
+	@./compiler.sh "ASM" "Link" "ld -o HelloWorld5App -e helloworldapp HelloWorldApp.o"
+	@./compiler.sh "ASM" "Run" "./HelloWorld5App"
 
 clear:
 	@rm helloWorldApp
 	@rm helloWorld2App
 	@rm helloWorld3App
 	@rm helloWorld4App
+	@rm helloWorld5App
+	@rm helloWorldApp.o
 	@rm HelloWorldApp.class
