@@ -5,6 +5,6 @@ using System;
 
 public class HelloWorldApp {
   static public void Main() {
-    Console.WriteLine("C#   : Hello World App.");
+    Console.WriteLine("C# | Hello World App.");
   }
 }

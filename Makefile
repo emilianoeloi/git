@@ -1,25 +1,31 @@
-.PHONY: java c cpp cs py clear
+.PHONY: java c cpp cs py php clear
 
-all: java c cpp cs py clear
+all: java c cpp cs py php clear
+
+setup:
+	brew install coreutils
 
 java:
-	@javac HelloWorldApp.java
-	@java HelloWorldApp
+	@./compiler.sh "Java" "Compile" "javac HelloWorldApp.java"
+	@./compiler.sh "Java" "Run" "java HelloWorldApp"
 
 c:
-	@clang -o helloWorldApp HelloWorldApp.c
-	@./helloWorldApp
+	@./compiler.sh "C" "Compile" "clang -o helloWorldApp HelloWorldApp.c"
+	@./compiler.sh "C" "Run" "./helloWorldApp"
 
 cpp:
-	@g++ -o HelloWorld2App HelloWorldApp.cpp
-	@./helloWorld2App
+	@./compiler.sh "C++" "Compile" "g++ -o HelloWorld2App HelloWorldApp.cpp"
+	@./compiler.sh "C++" "Run" "./helloWorld2App"
 
 cs:
-	@mcs -out:HelloWorld3App HelloWorldApp.cs
-	@mono HelloWorld3App
+	@./compiler.sh "C#" "Compile" "mcs -out:HelloWorld3App HelloWorldApp.cs"
+	@./compiler.sh "C#" "Run" "mono HelloWorld3App"
 
 py:
-	@python HelloWorldApp.py
+	@./compiler.sh "Python" "Run" "python HelloWorldApp.py"
+
+php:
+	@./compiler.sh "PHP" "Run" "php HelloWorldApp.php"	
 
 clear:
 	@rm helloWorldApp
