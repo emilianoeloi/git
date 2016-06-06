@@ -1,6 +1,6 @@
-.PHONY: java c cpp cs py php vb js asm rb clear
+.PHONY: java c cpp cs py php vb js asm rb pl objc clear
 
-all: java c cpp cs py php vb js asm rb clear
+all: java c cpp cs py php vb js asm rb pl objc clear
 
 setup:
 	brew install coreutils
@@ -40,7 +40,14 @@ asm:
 	@./compiler.sh "ASM" "Run" "./HelloWorld5App"
 
 rb:
-	@./compiler.sh "Ruby" "Run" "ruby HelloWorldApp.rb"	
+	@./compiler.sh "Ruby" "Run" "ruby HelloWorldApp.rb"
+
+pl:
+	@./compiler.sh "Perl" "Run" "perl HelloWorldApp.pl"
+
+objc:
+	@./compiler.sh "ObjC" "Compile" "clang -o HelloWorld6App -Wall -std=c99 HelloWorldApp.m -framework Foundation -lobjc"
+	@./compiler.sh "ObjC" "Run" "./HelloWorld6App"
 
 clear:
 	@rm helloWorldApp
@@ -49,4 +56,5 @@ clear:
 	@rm helloWorld4App
 	@rm helloWorld5App
 	@rm helloWorldApp.o
+	@rm helloWorld6App
 	@rm HelloWorldApp.class
