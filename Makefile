@@ -13,6 +13,8 @@ java:
 c:
 	@./compiler.sh "C" "Compile" "clang -o helloWorldApp HelloWorldApp.c"
 	@./compiler.sh "C" "Run" "./helloWorldApp"
+	@./compiler.sh "C" "Compile" "clang -o Arithmetic Arithmetic.c"
+	@./compiler.sh "C" "Run" "./Arithmetic"
 
 cpp:
 	@./compiler.sh "C++" "Compile" "g++ -o HelloWorld2App HelloWorldApp.cpp"
@@ -31,9 +33,12 @@ php:
 vb:
 	@./compiler.sh "VB.NET" "Compile" "vbnc -out:HelloWorld4App HelloWorldApp.vb"
 	@./compiler.sh "VB.NET" "Run" "mono HelloWorld4App"
+	@./compiler.sh "VB.NET" "Compile" "vbnc -out:Arithmetic4 Arithmetic.vb"
+	@./compiler.sh "VB.NET" "Run" "mono Arithmetic4"
 
 js:
 	@./compiler.sh "JS" "Run" "node HelloWorldApp.js"
+	@./compiler.sh "JS" "Run" "node Arithmetic.js"
 
 asm:
 	@./compiler.sh "ASM" "Assembly" "nasm -f macho HelloWorldApp.asm"
@@ -59,6 +64,8 @@ go:
 	@./compiler.sh "Go" "Run" "./HelloWorldApp"
 
 clear:
+	@rm Arithmetic
+	@rm Arithmetic4
 	@rm helloWorldApp
 	@rm helloWorld2App
 	@rm helloWorld3App
