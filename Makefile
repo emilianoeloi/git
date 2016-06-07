@@ -7,64 +7,67 @@ setup:
 	brew install golang
 
 java:
-	@./compiler.sh "Java" "Compile" "javac HelloWorldApp.java"
-	@./compiler.sh "Java" "Run" "java HelloWorldApp"
+	@./runner.sh "Java" "Compile" "HelloWorld" "javac HelloWorldApp.java"
+	@./runner.sh "Java" "Run" "HelloWorld" "java HelloWorldApp"
 
 c:
-	@./compiler.sh "C" "Compile" "clang -o helloWorldApp HelloWorldApp.c"
-	@./compiler.sh "C" "Run" "./helloWorldApp"
-	@./compiler.sh "C" "Compile" "clang -o Arithmetic Arithmetic.c"
-	@./compiler.sh "C" "Run" "./Arithmetic"
+	@./runner.sh "C" "Compile" "HelloWorld" "clang -o helloWorldApp HelloWorldApp.c"
+	@./runner.sh "C" "Run" "HelloWorld" "./helloWorldApp"
+	@./runner.sh "C" "Compile" "Arithmetic" "clang -o Arithmetic Arithmetic.c"
+	@./runner.sh "C" "Run" "Arithmetic" "./Arithmetic"
 
 cpp:
-	@./compiler.sh "C++" "Compile" "g++ -o HelloWorld2App HelloWorldApp.cpp"
-	@./compiler.sh "C++" "Run" "./helloWorld2App"
+	@./runner.sh "C++" "Compile" "HelloWorld" "g++ -o HelloWorld2App HelloWorldApp.cpp"
+	@./runner.sh "C++" "Run" "HelloWorld" "./helloWorld2App"
+	@./runner.sh "C++" "Compile" "Arithmetic" "g++ -o Arithmetic2 Arithmetic.cpp"
+	@./runner.sh "C++" "Run" "Arithmetic" "./Arithmetic2"
 
 cs:
-	@./compiler.sh "C#" "Compile" "mcs -out:HelloWorld3App HelloWorldApp.cs"
-	@./compiler.sh "C#" "Run" "mono HelloWorld3App"
+	@./runner.sh "C#" "Compile" "HelloWorld" "mcs -out:HelloWorld3App HelloWorldApp.cs"
+	@./runner.sh "C#" "Run" "HelloWorld" "mono HelloWorld3App"
 
 py:
-	@./compiler.sh "Python" "Run" "python HelloWorldApp.py"
+	@./runner.sh "Python" "Run" "HelloWorld" "python HelloWorldApp.py"
 
 php:
-	@./compiler.sh "PHP" "Run" "php HelloWorldApp.php"
+	@./runner.sh "PHP" "Run" "HelloWorld" "php HelloWorldApp.php"
 
 vb:
-	@./compiler.sh "VB.NET" "Compile" "vbnc -out:HelloWorld4App HelloWorldApp.vb"
-	@./compiler.sh "VB.NET" "Run" "mono HelloWorld4App"
-	@./compiler.sh "VB.NET" "Compile" "vbnc -out:Arithmetic4 Arithmetic.vb"
-	@./compiler.sh "VB.NET" "Run" "mono Arithmetic4"
+	@./runner.sh "VB.NET" "Compile" "HelloWorld" "vbnc -out:HelloWorld4App HelloWorldApp.vb"
+	@./runner.sh "VB.NET" "Run" "HelloWorld" "mono HelloWorld4App"
+	@./runner.sh "VB.NET" "Compile" "Arithmetic" "vbnc -out:Arithmetic4 Arithmetic.vb"
+	@./runner.sh "VB.NET" "Run" "Arithmetic" "mono Arithmetic4"
 
 js:
-	@./compiler.sh "JS" "Run" "node HelloWorldApp.js"
-	@./compiler.sh "JS" "Run" "node Arithmetic.js"
+	@./runner.sh "JS" "Run" "HelloWorld" "node HelloWorldApp.js"
+	@./runner.sh "JS" "Run" "node Arithmetic.js"
 
 asm:
-	@./compiler.sh "ASM" "Assembly" "nasm -f macho HelloWorldApp.asm"
-	@./compiler.sh "ASM" "Link" "ld -o HelloWorld5App -e helloworldapp HelloWorldApp.o"
-	@./compiler.sh "ASM" "Run" "./HelloWorld5App"
+	@./runner.sh "ASM" "Assembly" "HelloWorld" "nasm -f macho HelloWorldApp.asm"
+	@./runner.sh "ASM" "Link" "HelloWorld" "ld -o HelloWorld5App -e helloworldapp HelloWorldApp.o"
+	@./runner.sh "ASM" "Run" "HelloWorld" "./HelloWorld5App"
 
 rb:
-	@./compiler.sh "Ruby" "Run" "ruby HelloWorldApp.rb"
+	@./runner.sh "Ruby" "Run" "HelloWorld" "ruby HelloWorldApp.rb"
 
 pl:
-	@./compiler.sh "Perl" "Run" "perl HelloWorldApp.pl"
+	@./runner.sh "Perl" "Run" "HelloWorld" "perl HelloWorldApp.pl"
 
 objc:
-	@./compiler.sh "ObjC" "Compile" "clang -o HelloWorld6App -Wall -std=c99 HelloWorldApp.m -framework Foundation -lobjc"
-	@./compiler.sh "ObjC" "Run" "./HelloWorld6App"
+	@./runner.sh "ObjC" "Compile" "HelloWorld" "clang -o HelloWorld6App -Wall -std=c99 HelloWorldApp.m -framework Foundation -lobjc"
+	@./runner.sh "ObjC" "Run" "HelloWorld" "./HelloWorld6App"
 
 swift:
-	@./compiler.sh "Swift" "Compile" "swiftc HelloWorldApp.swift -o HelloWorld7App"
-	@./compiler.sh "Swift" "Run" "./HelloWorld7App"
+	@./runner.sh "Swift" "Compile" "HelloWorld" "swiftc HelloWorldApp.swift -o HelloWorld7App"
+	@./runner.sh "Swift" "Run" "HelloWorld" "./HelloWorld7App"
 
 go:
-	@./compiler.sh "Go" "Compile" "go install HelloWorldApp.go"
-	@./compiler.sh "Go" "Run" "./HelloWorldApp"
+	@./runner.sh "Go" "Compile" "HelloWorld" "go install HelloWorldApp.go"
+	@./runner.sh "Go" "Run" "HelloWorld" "./HelloWorldApp"
 
 clear:
 	@rm Arithmetic
+	@rm Arithmetic2
 	@rm Arithmetic4
 	@rm helloWorldApp
 	@rm helloWorld2App
