@@ -1,9 +1,10 @@
-.PHONY: java c cpp cs py php vb js asm rb pl objc clear
+.PHONY: java c cpp cs py php vb js asm rb pl objc swift go clear
 
-all: java c cpp cs py php vb js asm rb pl objc clear
+all: java c cpp cs py php vb js asm rb pl objc swift go clear
 
 setup:
 	brew install coreutils
+	brew install golang
 
 java:
 	@./compiler.sh "Java" "Compile" "javac HelloWorldApp.java"
@@ -49,6 +50,14 @@ objc:
 	@./compiler.sh "ObjC" "Compile" "clang -o HelloWorld6App -Wall -std=c99 HelloWorldApp.m -framework Foundation -lobjc"
 	@./compiler.sh "ObjC" "Run" "./HelloWorld6App"
 
+swift:
+	@./compiler.sh "Swift" "Compile" "swiftc HelloWorldApp.swift -o HelloWorld7App"
+	@./compiler.sh "Swift" "Run" "./HelloWorld7App"
+
+go:
+	@./compiler.sh "Go" "Compile" "go install HelloWorldApp.go"
+	@./compiler.sh "Go" "Run" "./HelloWorldApp"
+
 clear:
 	@rm helloWorldApp
 	@rm helloWorld2App
@@ -57,4 +66,5 @@ clear:
 	@rm helloWorld5App
 	@rm helloWorldApp.o
 	@rm helloWorld6App
+	@rm helloWorld7App
 	@rm HelloWorldApp.class
