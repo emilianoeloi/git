@@ -9,12 +9,14 @@ setup:
 java:
 	@./runner.sh "Java" "Compile" "HelloWorld" "javac HelloWorldApp.java"
 	@./runner.sh "Java" "Run" "HelloWorld" "java HelloWorldApp"
+	@./runner.sh "Java" "Compile" "Arithmetic" "javac Arithmetic.java"
+	@./runner.sh "Java" "Run" "Arithmetic" "java Arithmetic"
 
 c:
-	@./runner.sh "C" "Compile" "HelloWorld" "clang -o helloWorldApp HelloWorldApp.c"
-	@./runner.sh "C" "Run" "HelloWorld" "./helloWorldApp"
-	@./runner.sh "C" "Compile" "Arithmetic" "clang -o Arithmetic Arithmetic.c"
-	@./runner.sh "C" "Run" "Arithmetic" "./Arithmetic"
+	@./runner.sh "C" "Compile" "HelloWorld" "clang -o helloWorld1App HelloWorldApp.c"
+	@./runner.sh "C" "Run" "HelloWorld" "./helloWorld1App"
+	@./runner.sh "C" "Compile" "Arithmetic" "clang -o Arithmetic1 Arithmetic.c"
+	@./runner.sh "C" "Run" "Arithmetic" "./Arithmetic1"
 
 cpp:
 	@./runner.sh "C++" "Compile" "HelloWorld" "g++ -o HelloWorld2App HelloWorldApp.cpp"
@@ -66,10 +68,12 @@ go:
 	@./runner.sh "Go" "Run" "HelloWorld" "./HelloWorldApp"
 
 clear:
-	@rm Arithmetic
+	@rm Arithmetic.class
+	@rm Arithmetic1
 	@rm Arithmetic2
 	@rm Arithmetic4
 	@rm helloWorldApp
+	@rm helloWorld1App
 	@rm helloWorld2App
 	@rm helloWorld3App
 	@rm helloWorld4App
