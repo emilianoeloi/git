@@ -1,10 +1,11 @@
-.PHONY: java c cpp cs py php vb js asm rb pl objc swift go clear
+.PHONY: java c cpp cs py php vb js asm rb pl objc swift go lua clear
 
-all: java c cpp cs py php vb js asm rb pl objc swift go clear
+all: java c cpp cs py php vb js asm rb pl objc swift go lua clear
 
 setup:
 	brew install coreutils
 	brew install golang
+	brew install lua
 
 java:
 	@./runner.sh "Java" "Compile" "HelloWorld" "javac HelloWorldApp.java"
@@ -66,6 +67,9 @@ swift:
 go:
 	@./runner.sh "Go" "Compile" "HelloWorld" "go install HelloWorldApp.go"
 	@./runner.sh "Go" "Run" "HelloWorld" "./HelloWorldApp"
+
+lua:
+	@./runner.sh "Lua" "Run" "HelloWorld" "lua ./HelloWorldApp.lua"
 
 clear:
 	@rm Arithmetic.class
