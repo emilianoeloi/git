@@ -1,9 +1,23 @@
 # git
-GIT
+
+
+## Programar
+
+Setup
+  
+```
+make setup
+```
+
+### Objective-C (https://pt.wikipedia.org/wiki/Objective-C)
+
+```
+make objc
+```
 
 ## References
 
-TIOBE Index for May 2016 - http://www.tiobe.com/tiobe_index
+TIOBE - http://www.tiobe.com/tiobe_index
 
 Java (programming language) - https://en.wikipedia.org/wiki/Java_(programming_language)
 
