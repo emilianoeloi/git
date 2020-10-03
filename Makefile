@@ -1,11 +1,15 @@
-.PHONY: asm c cpp cs php py pl vb js rb objc java swift go lua clear
+.PHONY: asm c cpp cs php py pl vb js rb objc java swift go lua kotlin clear
 
-all: java c cpp cs py php vb js asm rb pl objc swift go lua clear
+all: java c cpp cs py php vb js asm rb pl objc swift go lua kotlin clear
 
 setup:
 	brew install coreutils
 	brew install golang
 	brew install lua
+
+kotlin:
+	@./runner.sh "Kotlin" "Compile" "HelloWorld" "kotlinc kotlin/HelloWorld.kt -include-runtime -d kotlin/HelloWorldKT.jar"
+	@./runner.sh "Kotlin" "Run" "HelloWorld" "java -jar kotlin/HelloWorldKT.jar"
 
 java:
 	@./runner.sh "Java" "Compile" "HelloWorld" "javac java/HelloWorldApp.java"
