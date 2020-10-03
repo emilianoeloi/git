@@ -3,10 +3,11 @@
 all: java c cpp cs py php vb js asm rb pl objc swift go lua kotlin clear
 
 setup:
+	brew update
 	brew install coreutils
-	brew install golang
-	brew install lua
 
+kotlin-setup:
+	brew install kotlin
 kotlin:
 	@./runner.sh "Kotlin" "Compile" "HelloWorld" "kotlinc kotlin/HelloWorld.kt -include-runtime -d kotlin/HelloWorldKT.jar"
 	@./runner.sh "Kotlin" "Run" "HelloWorld" "java -jar kotlin/HelloWorldKT.jar"
@@ -18,10 +19,10 @@ java:
 	@./runner.sh "Java" "Run" "Arithmetic" "java java/Arithmetic"
 
 c:
-	@./runner.sh "C" "Compile" "HelloWorld" "clang -o helloWorld1App HelloWorldApp.c"
-	@./runner.sh "C" "Run" "HelloWorld" "./helloWorld1App"
-	@./runner.sh "C" "Compile" "Arithmetic" "clang -o Arithmetic1 Arithmetic.c"
-	@./runner.sh "C" "Run" "Arithmetic" "./Arithmetic1"
+	@./runner.sh "C" "Compile" "HelloWorld" "clang -o c/helloWorldC c/HelloWorldC.c"
+	@./runner.sh "C" "Run" "HelloWorld" "./c/helloWorldC"
+	@./runner.sh "C" "Compile" "Arithmetic" "clang -o c/ArithmeticC c/ArithmeticC.c"
+	@./runner.sh "C" "Run" "Arithmetic" "./c/ArithmeticC"
 
 cpp:
 	@./runner.sh "C++" "Compile" "HelloWorld" "g++ -o HelloWorld2App HelloWorldApp.cpp"
@@ -64,18 +65,25 @@ objc:
 	@./runner.sh "ObjC" "Compile" "HelloWorld" "clang -o HelloWorld6App -Wall -std=c99 HelloWorldApp.m -framework Foundation -lobjc"
 	@./runner.sh "ObjC" "Run" "HelloWorld" "./HelloWorld6App"
 
+swift-setup:
+	# brew install swift
 swift:
-	@./runner.sh "Swift" "Compile" "HelloWorld" "swiftc HelloWorldApp.swift -o HelloWorld7App"
-	@./runner.sh "Swift" "Run" "HelloWorld" "./HelloWorld7App"
+	@./runner.sh "Swift" "Compile" "HelloWorld" "swiftc swift/HelloWorldSwift.swift -o swift/HelloWorldSwift"
+	@./runner.sh "Swift" "Run" "HelloWorld" "swift/HelloWorldSwift"
 
+go-setup:
+	brew install golang
+	
 go:
-	@./runner.sh "Go" "Compile" "HelloWorld" "go install HelloWorldApp.go"
-	@./runner.sh "Go" "Run" "HelloWorld" "./HelloWorldApp"
+	@./runner.sh "Go" "Run" "HelloWorld" "go run go/HelloWorldGo.go"
 
+lua-setup:
+	brew install lua
 lua:
 	@./runner.sh "Lua" "Run" "HelloWorld" "lua ./HelloWorldApp.lua"
 
 clear:
+	@rm kotlin/HelloWorldKT.jar
 	@rm Arithmetic.class
 	@rm Arithmetic1
 	@rm Arithmetic2
