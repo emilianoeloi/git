@@ -1,6 +1,6 @@
-.PHONY: asm c cpp cs php py pl vb js rb objc java swift go lua kotlin clear
+.PHONY: asm c cpp cs php python pl vb js rb objc java swift go lua kotlin clear
 
-all: java c cpp cs py php vb js asm rb pl objc swift go lua kotlin clear
+all: java c cpp cs python php vb js asm rb pl objc swift go lua kotlin clear
 
 setup:
 	brew update
@@ -34,8 +34,8 @@ cs:
 	@./runner.sh "C#" "Compile" "HelloWorld" "mcs -out:HelloWorld3App HelloWorldApp.cs"
 	@./runner.sh "C#" "Run" "HelloWorld" "mono HelloWorld3App"
 
-py:
-	@./runner.sh "Python" "Run" "HelloWorld" "python HelloWorldApp.py"
+python:
+	@./runner.sh "Python" "Run" "HelloWorld" "python python/HelloWorldPY.py"
 
 php:
 	@./runner.sh "PHP" "Run" "HelloWorld" "php HelloWorldApp.php"
