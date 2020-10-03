@@ -1,4 +1,4 @@
-.PHONY: java c cpp cs py php vb js asm rb pl objc swift go lua clear
+.PHONY: asm c cpp cs php py pl vb js rb objc java swift go lua clear
 
 all: java c cpp cs py php vb js asm rb pl objc swift go lua clear
 
@@ -8,10 +8,10 @@ setup:
 	brew install lua
 
 java:
-	@./runner.sh "Java" "Compile" "HelloWorld" "javac HelloWorldApp.java"
-	@./runner.sh "Java" "Run" "HelloWorld" "java HelloWorldApp"
-	@./runner.sh "Java" "Compile" "Arithmetic" "javac Arithmetic.java"
-	@./runner.sh "Java" "Run" "Arithmetic" "java Arithmetic"
+	@./runner.sh "Java" "Compile" "HelloWorld" "javac java/HelloWorldApp.java"
+	@./runner.sh "Java" "Run" "HelloWorld" "java java/HelloWorldApp"
+	@./runner.sh "Java" "Compile" "Arithmetic" "javac java/Arithmetic.java"
+	@./runner.sh "Java" "Run" "Arithmetic" "java java/Arithmetic"
 
 c:
 	@./runner.sh "C" "Compile" "HelloWorld" "clang -o helloWorld1App HelloWorldApp.c"
