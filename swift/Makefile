@@ -1,0 +1,2 @@
+version:
+	swift --version
