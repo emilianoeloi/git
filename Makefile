@@ -1,6 +1,6 @@
-.PHONY: asm c cpp cs php python pl vb js rb objc java swift go lua kotlin clear
+.PHONY: asm c cpp cs php python pl vb js rb objective-c java swift go lua kotlin clear
 
-all: java c cpp cs python php vb js asm rb pl objc swift go lua kotlin clear
+all: java c cpp cs python php vb js asm rb pl objective-c swift go lua kotlin clear
 
 setup:
 	brew update
@@ -61,9 +61,9 @@ rb:
 pl:
 	@./runner.sh "Perl" "Run" "HelloWorld" "perl HelloWorldApp.pl"
 
-objc:
-	@./runner.sh "ObjC" "Compile" "HelloWorld" "clang -o HelloWorld6App -Wall -std=c99 HelloWorldApp.m -framework Foundation -lobjc"
-	@./runner.sh "ObjC" "Run" "HelloWorld" "./HelloWorld6App"
+objective-c:
+	@./runner.sh "Objective-C" "Compile" "HelloWorld" "clang -o objective-c/HelloWorldObjC -Wall -std=c99 objective-c/HelloWorldObjC.m -framework Foundation -lobjc"
+	@./runner.sh "Objective-C" "Run" "HelloWorld" "./objective-c/HelloWorldObjC"
 
 swift-setup:
 	# brew install swift

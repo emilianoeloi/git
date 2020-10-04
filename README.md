@@ -15,7 +15,7 @@ make setup
 make c
 ```
 
-## Golang ()
+## Golang (https://golang.org/)
 
 ```
 make go
@@ -30,13 +30,7 @@ make kotlin
 ### Objective-C (https://pt.wikipedia.org/wiki/Objective-C)
 
 ```
-make objc
-```
-
-## Swift (https://swift.org/)
-
-```
-make swift
+make objective-c
 ```
 
 ## Python (https://www.python.org/)
@@ -45,8 +39,15 @@ make swift
 make python
 ```
 
+## Swift (https://swift.org/)
+
+```
+make swift
+```
+
 ## References
 
+Running Swift without Xcode - https://monospacedmonologues.com/2019/01/running-swift-without-xcode/ - 10/03/2020
 
 Como Instalar o Go e Configurar um Ambiente de Programação Local no macOS - https://www.digitalocean.com/community/tutorials/como-instalar-o-go-e-configurar-um-ambiente-de-programacao-local-no-macos-pt - 10/3/2020
 
