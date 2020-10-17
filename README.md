@@ -45,7 +45,15 @@ make python
 make swift
 ```
 
+## R (https://www.r-project.org/)
+
+```
+make r
+```
+
 ## References
+
+The R Project for Statistical Computing - https://www.r-project.org/ - 11/17/2020
 
 Running Swift without Xcode - https://monospacedmonologues.com/2019/01/running-swift-without-xcode/ - 10/03/2020
 
