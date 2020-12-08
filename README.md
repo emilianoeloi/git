@@ -1,7 +1,4 @@
-# git
-
-
-## Programar
+i# Programar 
 
 Setup
   
